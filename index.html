@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lemuel Layola Apa | Portfolio</title>
+  <meta
+    name="description"
+    content="Professional work portfolio for Lemuel Layola Apa featuring modern websites, interactive tools, and full-stack digital experiences."
+  >
+  <meta name="theme-color" content="#281C59">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap");
+
+    :root {
+      --bg: #edf7bd;
+      --paper: rgba(255, 255, 255, 0.72);
+      --paper-strong: rgba(255, 255, 255, 0.9);
+      --ink: #281c59;
+      --muted: #496876;
+      --line: rgba(40, 28, 89, 0.12);
+      --accent: #4e8d9c;
+      --accent-soft: rgba(78, 141, 156, 0.12);
+      --accent-2: #85c79a;
+      --shadow: 0 24px 60px rgba(40, 28, 89, 0.1);
+      --radius-xl: 34px;
+      --radius-lg: 26px;
+      --radius-md: 18px;
+      --max-width: 1220px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(40, 28, 89, 0.16), transparent 24%),
+        radial-gradient(circle at 90% 15%, rgba(78, 141, 156, 0.18), transparent 26%),
+        linear-gradient(180deg, #f7fbdf 0%, #edf7bd 54%, #dff1c7 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .shell {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .shell::before,
+    .shell::after {
+      content: "";
+      position: fixed;
+      width: 28rem;
+      height: 28rem;
+      border-radius: 999px;
+      filter: blur(60px);
+      pointer-events: none;
+      opacity: 0.35;
+      z-index: 0;
+    }
+
+    .shell::before {
+      background: rgba(40, 28, 89, 0.14);
+      top: -10rem;
+      left: -8rem;
+    }
+
+    .shell::after {
+      background: rgba(78, 141, 156, 0.16);
+      right: -10rem;
+      bottom: 8rem;
+    }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--max-width));
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.4rem 0 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.85rem;
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+    }
+
+    .brand-mark {
+      width: 2.9rem;
+      height: 2.9rem;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #281c59, #4e8d9c);
+      color: #ffffff;
+      font-weight: 800;
+      letter-spacing: -0.06em;
+      box-shadow: 0 14px 32px rgba(40, 28, 89, 0.2);
+    }
+
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.9rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      backdrop-filter: blur(18px);
+      font-size: 0.95rem;
+      transition: transform 180ms ease, background 180ms ease;
+    }
+
+    .nav-link:hover,
+    .button:hover,
+    .secondary-button:hover,
+    .project-link:hover {
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      padding: 4rem 0 2rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(340px, 0.9fr);
+      gap: 1rem;
+    }
+
+    .panel,
+    .project-card,
+    .stat-card,
+    .footer-card {
+      background: var(--paper);
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero-main {
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-main::after {
+      content: "";
+      position: absolute;
+      inset: auto -4rem -5rem auto;
+      width: 16rem;
+      height: 16rem;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(78, 141, 156, 0.18), transparent 65%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.48rem 0.8rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 0.45rem;
+      height: 0.45rem;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    h1 {
+      margin: 1rem 0;
+      font-size: clamp(3rem, 7vw, 5rem);
+      line-height: 0.94;
+      letter-spacing: -0.07em;
+      max-width: 11ch;
+    }
+
+    h1 .serif {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 600;
+      color: #3a5f74;
+      display: inline-block;
+    }
+
+    .lead {
+      max-width: 62ch;
+      margin: 0 0 1.35rem;
+      color: var(--muted);
+      line-height: 1.85;
+      font-size: 1.02rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin: 1.4rem 0 1.8rem;
+    }
+
+    .button,
+    .secondary-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      padding: 0.95rem 1.2rem;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .button {
+      background: #281c59;
+      color: #ffffff;
+      box-shadow: 0 16px 32px rgba(40, 28, 89, 0.2);
+    }
+
+    .secondary-button {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.55);
+      color: var(--ink);
+    }
+
+    .hero-note {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.85rem;
+    }
+
+    .micro-card {
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.56);
+      border: 1px solid rgba(17, 17, 17, 0.06);
+    }
+
+    .micro-card strong {
+      display: block;
+      font-size: 1.55rem;
+      letter-spacing: -0.05em;
+      margin-bottom: 0.2rem;
+    }
+
+    .micro-card span {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .hero-side {
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .profile-card {
+      padding: 1rem;
+      border-radius: var(--radius-lg);
+      background: var(--paper-strong);
+      border: 1px solid rgba(40, 28, 89, 0.08);
+    }
+
+    .profile-visual {
+      display: grid;
+      grid-template-columns: 1fr 0.82fr;
+      gap: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .profile-main,
+    .profile-alt {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      background-image: url(images/lemuel.jpg);
+      background-size: cover;
+      background-position: center center;
+      border: 1px dashed rgba(40, 28, 89, 0.18);
+      min-height: 250px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .profile-alt {
+      min-height: 250px;
+      display: none;
+    }
+
+    .profile-main::before,
+    .profile-alt::before {
+      content: "";
+      position: absolute;
+      inset: auto auto -22% -14%;
+      width: 11rem;
+      height: 11rem;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.28);
+      filter: blur(8px);
+      display: none;
+    }
+
+    .placeholder-badge {
+      position: relative;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      z-index: 1;
+      display: none;
+    }
+
+    .placeholder-avatar {
+      width: 5.5rem;
+      height: 5.5rem;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: rgba(255, 255, 255, 0.8);
+      color: #281c59;
+      box-shadow: 0 12px 30px rgba(40, 28, 89, 0.12);
+    }
+
+    .placeholder-title {
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .placeholder-text {
+      font-size: 0.9rem;
+      color: #355868;
+      line-height: 1.5;
+      max-width: 16ch;
+    }
+
+    .profile-copy h2 {
+      margin: 0 0 0.3rem;
+      font-size: 1.6rem;
+      letter-spacing: -0.05em;
+    }
+
+    .profile-copy p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 0.95rem;
+    }
+
+    .side-list {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .side-item {
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.54);
+      border: 1px solid rgba(17, 17, 17, 0.06);
+    }
+
+    .side-label {
+      margin: 0 0 0.35rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .side-item strong {
+      display: block;
+      margin-bottom: 0.35rem;
+      font-size: 1rem;
+    }
+
+    .side-item span {
+      color: var(--muted);
+      font-size: 0.93rem;
+      line-height: 1.65;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 1rem;
+      margin: 1.5rem 0 1.2rem;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.9rem, 3vw, 2.9rem);
+      letter-spacing: -0.05em;
+    }
+
+    .section-head p {
+      max-width: 58ch;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .stat-card {
+      padding: 1.15rem 1.2rem;
+    }
+
+    .stat-card strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-size: 1.65rem;
+      letter-spacing: -0.05em;
+    }
+
+    .stat-card span {
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 0.92rem;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 1rem;
+      padding-bottom: 2.4rem;
+    }
+
+    .project-card {
+      grid-column: span 6;
+      overflow: hidden;
+      transition: transform 220ms ease, box-shadow 220ms ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 28px 68px rgba(20, 20, 20, 0.12);
+    }
+
+    .project-preview {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: linear-gradient(135deg, #d4ecef, #b8ddc3);
+      border-bottom: 1px solid rgba(40, 28, 89, 0.08);
+    }
+
+    .project-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 500ms ease;
+    }
+
+    .project-card:hover .project-preview img {
+      transform: scale(1.03);
+    }
+
+    .preview-overlay {
+      position: absolute;
+      inset: auto 1rem 1rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.8rem 0.9rem;
+      border-radius: 16px;
+      background: rgba(40, 28, 89, 0.8);
+      color: #ffffff;
+      backdrop-filter: blur(10px);
+    }
+
+    .preview-label {
+      font-size: 0.74rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 0.2rem;
+      font-weight: 700;
+    }
+
+    .preview-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    .project-body {
+      padding: 1.4rem;
+    }
+
+    .project-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 1rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .project-type {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .project-type::before {
+      content: "";
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .project-body h3 {
+      margin: 0.2rem 0 0.35rem;
+      font-size: 1.55rem;
+      letter-spacing: -0.05em;
+    }
+
+    .role {
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 0.85rem;
+    }
+
+    .overview {
+      margin: 0 0 1rem;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .list-title {
+      margin: 0 0 0.7rem;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .project-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1rem;
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .project-list li {
+      position: relative;
+      padding-left: 1.1rem;
+      line-height: 1.65;
+    }
+
+    .project-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.7rem;
+      width: 0.42rem;
+      height: 0.42rem;
+      border-radius: 999px;
+      background: rgba(78, 141, 156, 0.9);
+    }
+
+    .outcome {
+      padding: 1rem;
+      border-radius: var(--radius-md);
+      background: rgba(133, 199, 154, 0.2);
+      border: 1px solid rgba(78, 141, 156, 0.18);
+      color: #28526a;
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+
+    .project-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding-top: 0.2rem;
+      border-top: 1px solid rgba(17, 17, 17, 0.08);
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      padding: 0.42rem 0.68rem;
+      border-radius: 999px;
+      background: rgba(78, 141, 156, 0.12);
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-weight: 800;
+      transition: transform 180ms ease;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      padding-bottom: 3rem;
+    }
+
+    .summary-card {
+      padding: 1.5rem;
+    }
+
+    .summary-card h3 {
+      margin: 0 0 0.45rem;
+      font-size: 1.18rem;
+      letter-spacing: -0.04em;
+    }
+
+    .summary-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .footer-card {
+      padding: 1.4rem 1.6rem;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 700ms ease, transform 700ms ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1080px) {
+      .hero,
+      .summary-grid,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card {
+        grid-column: span 12;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .topbar,
+      .section-head,
+      .project-footer,
+      .project-meta,
+      .footer-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero {
+        padding-top: 3rem;
+      }
+
+      .panel,
+      .project-card,
+      .stat-card,
+      .footer-card {
+        border-radius: 26px;
+      }
+
+      .hero-note,
+      .profile-visual {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        max-width: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div class="container">
+      <header class="topbar reveal">
+        <div class="brand">
+          <span class="brand-mark">LA</span>
+          <span>Lemuel Layola Apa</span>
+        </div>
+        <a class="nav-link" href="#projects">Selected Projects</a>
+      </header>
+
+      <main>
+        <section class="hero">
+          <article class="panel hero-main reveal">
+            <span class="eyebrow">Senior Web Developer / SEO Specialist / Website Manager</span>
+            <h1>Lemuel builds <span class="serif">professional</span> digital experiences.</h1>
+            <p class="lead">
+              Web developer focused on modern websites, interactive tools, and conversion-oriented digital
+              experiences. This portfolio brings together corporate websites, AI-powered interfaces,
+              healthcare platforms, and product-focused brand work delivered with attention to usability,
+              structure, performance, and visual polish.
+            </p>
+            <div class="hero-actions">
+              <a class="button" href="#projects">View Portfolio</a>
+              <a class="secondary-button" href="#about">Profile Overview</a>
+            </div>
+            <div class="hero-note">
+              <div class="micro-card">
+                <strong>10</strong>
+                <span>Featured client websites and interactive platforms</span>
+              </div>
+              <div class="micro-card">
+                <strong>WordPress</strong>
+                <span>Scalable delivery with Elementor, SEO structure, and content flexibility</span>
+              </div>
+              <div class="micro-card">
+                <strong>Full-Stack</strong>
+                <span>Frontend, API integration, AI-enabled experiences, and business-focused UX</span>
+              </div>
+            </div>
+          </article>
+
+          <aside class="panel hero-side reveal" id="about">
+            <div class="profile-card">
+              <div class="profile-visual">
+                <div class="profile-main">
+                  <div class="placeholder-badge">
+                    <div class="placeholder-avatar">LLA</div>
+                    <div class="placeholder-title">Profile Photo</div>
+                    <div class="placeholder-text">Replace this placeholder with your main professional headshot.</div>
+                  </div>
+                </div>
+                <div class="profile-alt">
+                  <div class="placeholder-badge">
+                    <div class="placeholder-avatar">+</div>
+                    <div class="placeholder-title">Secondary Image</div>
+                    <div class="placeholder-text">Optional workspace, portrait, or personal brand image.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="profile-copy">
+                <h2>Lemuel Layola Apa</h2>
+                <p>
+                  Web Developer with experience delivering polished websites and digital products across
+                  premium creative, healthcare, finance, technology, education, and consumer brands.
+                </p>
+              </div>
+            </div>
+
+            <div class="side-list">
+              <div class="side-item">
+                <p class="side-label">Specialty</p>
+                <strong>Clean interfaces with business intent</strong>
+                <span>Design and build work that feels professional, loads efficiently, and guides users clearly.</span>
+              </div>
+              <div class="side-item">
+                <p class="side-label">Delivery</p>
+                <strong>Flexible across platforms and project types</strong>
+                <span>From WordPress marketing sites to AI-powered visual tools and structured corporate websites.</span>
+              </div>
+              <div class="side-item">
+                <p class="side-label">Strength</p>
+                <strong>Usability, performance, and clarity</strong>
+                <span>Consistent focus on accessible layout, strong content flow, and credible presentation.</span>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <section class="reveal">
+          <div class="section-head">
+            <div>
+              <h2>Professional Snapshot</h2>
+            </div>
+            <p>
+              A concise view of the kind of work represented here: premium brand websites, conversion-led
+              business platforms, and digital experiences designed to support trust and growth.
+            </p>
+          </div>
+          <div class="stats">
+            <div class="stat-card">
+              <strong>Corporate</strong>
+              <span>Professional presentation for finance, healthcare, consulting, and technology brands.</span>
+            </div>
+            <div class="stat-card">
+              <strong>Interactive</strong>
+              <span>Product experiences and dynamic interfaces that increase engagement and user action.</span>
+            </div>
+            <div class="stat-card">
+              <strong>Optimized</strong>
+              <span>Performance, SEO structure, responsiveness, and accessible content hierarchy.</span>
+            </div>
+            <div class="stat-card">
+              <strong>Trusted</strong>
+              <span>Design decisions centered on clarity, professionalism, and stronger brand credibility.</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects">
+          <div class="section-head reveal">
+            <div>
+              <h2>Selected Work</h2>
+            </div>
+            <p>
+              Each project below includes a homepage snapshot, project overview, role, and measurable
+              contribution summary to present the work in a more client-ready format.
+            </p>
+          </div>
+
+          <div class="project-grid">
+            <article class="project-card reveal">
+              <div class="project-preview">
+                <img src="https://image.thum.io/get/width/1200/https://xo3d.co.uk/" alt="Homepage snapshot of XO3D">
+                <div class="preview-overlay">
+                  <div>
+                    <div class="preview-label">Homepage Snapshot</div>
+                    <div class="preview-name">XO3D</div>
+                  </div>
+                  <div>3D Studio</div>
+                </div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <div>
+                    <div class="project-type">3D Visualization Studio</div>
+                    <h3>XO3D</h3>
+                  </div>
+                  <a class="project-link" href="https://xo3d.co.uk/" target="_blank" rel="noreferrer">Visit Site</a>
+                </div>
+                <div class="role">Senior Web Developer / Website Manager</div>
+                <p class="overview">
+                  Corporate website for a high-end 3D rendering studio showcasing portfolio work and services
+                  through a premium visual presentation.
+                </p>
+                <p class="list-title">Key Contributions</p>
+                <ul class="project-list">
+                  <li>Built and maintained a scalable WordPress website using Elementor.</li>
+                  <li>Integrated rich media and interactive visual content to better showcase studio work.</li>
+                  <li>Optimized performance, SEO, and Core Web Vitals.</li>
+                </ul>
+                <div class="outcome">Enhanced user experience and strengthened the brand’s premium positioning.</div>
+                <div class="project-footer">
+                  <div class="tags">
+                    <span class="tag">WordPress</span>
+                    <span class="tag">Elementor</span>
+                    <span class="tag">Performance</span>
+                  </div>
+                  <a class="project-link" href="https://xo3d.co.uk/" target="_blank" rel="noreferrer">Open Project</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-preview">
+                <img src="https://image.thum.io/get/width/1200/https://allweathercoating.co.uk/ai-coating-visualiser/" alt="Homepage snapshot of All Weather Coating AI Coating Visualiser">
+                <div class="preview-overlay">
+                  <div>
+                    <div class="preview-label">Homepage Snapshot</div>
+                    <div class="preview-name">AI Coating Visualiser</div>
+                  </div>
+                  <div>Interactive Tool</div>
+                </div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <div>
+                    <div class="project-type">AI Experience</div>
+                    <h3>All Weather Coating Visualiser</h3>
+                  </div>
+                  <a class="project-link" href="https://allweathercoating.co.uk/ai-coating-visualiser/" target="_blank" rel="noreferrer">Visit Site</a>
+                </div>
+                <div class="role">Full-Stack Developer</div>
+                <p class="overview">
+                  Interactive AI-powered tool that allows users to visualize exterior coatings in real time
+                  and supports engagement-led conversion.
+                </p>
+                <p class="list-title">Key Contributions</p>
+                <ul class="project-list">
+                  <li>Developed an AI-driven visualiser with a dynamic user interface.</li>
+                  <li>Integrated the frontend with AI processing APIs.</li>
+                  <li>Designed the experience to support lead generation and stronger engagement.</li>
+                </ul>
+                <div class="outcome">Increased user interaction and delivered a stronger conversion tool for the business.</div>
+                <div class="project-footer">
+                  <div class="tags">
+                    <span class="tag">Full-Stack</span>
+                    <span class="tag">AI APIs</span>
+                    <span class="tag">Lead Generation</span>
+                  </div>
+                  <a class="project-link" href="https://allweathercoating.co.uk/ai-coating-visualiser/" target="_blank" rel="noreferrer">Open Project</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-preview">
+                <img src="images/awc.jpg" alt="Homepage snapshot of All Weather Coating">
+                <div class="preview-overlay">
+                  <div>
+                    <div class="preview-label">Homepage Snapshot</div>
+                    <div class="preview-name">All Weather Coating</div>
+                  </div>
+                  <div>Business Website</div>
+                </div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <div>
+                    <div class="project-type">Lead Generation Website</div>
+                    <h3>All Weather Coating</h3>
+                  </div>
+                  <a class="project-link" href="https://allweathercoating.co.uk/" target="_blank" rel="noreferrer">Visit Site</a>
+                </div>
+                <div class="role">Web Developer / SEO Specialist</div>
+                <p class="overview">
+                  Service-based website for a UK exterior coating company built to increase visibility and
+                  streamline customer inquiries.
+                </p>
+                <p class="list-title">Key Contributions</p>
+                <ul class="project-list">
+                  <li>Built a responsive WordPress site with Elementor.</li>
+                  <li>Implemented SEO structure and performance optimization.</li>
+                  <li>Integrated conversion-focused UI and UX patterns.</li>
+                </ul>
+                <div class="outcome">Improved visibility and supported a more efficient inquiry journey.</div>
+                <div class="project-footer">
+                  <div class="tags">
+                    <span class="tag">WordPress</span>
+                    <span class="tag">SEO</span>
+                    <span class="tag">Responsive</span>
+                  </div>
+                  <a class="project-link" href="https://allweathercoating.co.uk/" target="_blank" rel="noreferrer">Open Project</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-preview">
+                <img src="images/capitalixe.jpg" alt="Homepage snapshot of Capitalixe">
+                <div class="preview-overlay">
+                  <div>
+                    <div class="preview-label">Homepage Snapshot</div>
+                    <div class="preview-name">Capitalixe</div>
+                  </div>
+                  <div>Financial Services</div>
+                </div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <div>
+                    <div class="project-type">Corporate Platform</div>
+                    <h3>Capitalixe</h3>
+                  </div>
+                  <a class="project-link" href="https://capitalixe.com/" target="_blank" rel="noreferrer">Visit Site</a>
+                </div>
+                <div class="role">Web Developer</div>
+                <p class="overview">
+                  Corporate website for a financial services provider with structured content, clean
+                  navigation, and a professional visual identity.
+                </p>
+                <p class="list-title">Key Contributions</p>
+                <ul class="project-list">
+                  <li>Developed a clean UI aligned with the company’s brand identity.</li>
+                  <li>Structured pages for SEO and stronger user flow.</li>
+                  <li>Ensured responsive and accessible design across devices.</li>
+                </ul>
+                <div class="outcome">Improved navigation clarity and presented services more effectively.</div>
+                <div class="project-footer">
+                  <div class="tags">
+                    <span class="tag">Corporate</span>
+                    <span class="tag">Accessibility</span>
+                    <span class="tag">UX Structure</span>
+                  </div>
+                  <a class="project-link" href="https://capitalixe.com/" target="_blank" rel="noreferrer">Open Project</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-preview">
+                <img src="images/asio.jpg" alt="Homepage snapshot of Asiotech">
+                <div class="preview-overlay">
+                  <div>
+                    <div class="preview-label">Homepage Snapshot</div>
+                    <div class="preview-name">Asiotech</div>
+                  </div>
+                  <div>Technology</div>
+                </div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <div>
+                    <div class="project-type">Technology Solutions</div>
+                    <h3>Asiotech</h3>
+                  </div>
+                  <a class="project-link" href="https://asiotech.com/" target="_blank" rel="noreferrer">Visit Site</a>
+                </div>
+                <div class="role">Web Developer</div>
+                <p class="overview">
+                  Business website presenting technology services through a modern responsive layout built
+                  for clarity and usability.
+                </p>
+                <p class="list-title">Key Contributions</p>
+                <ul class="project-list">
+                  <li>Built a modern, responsive layout.</li>
+                  <li>Focused on clarity, performance, and usability.</li>
+                </ul>
+                <div class="outcome">Delivered a professional online presence that supports client acquisition.</div>
+                <div class="project-footer">
+                  <div class="tags">
+                    <span class="tag">Responsive</span>
+                    <span class="tag">Performance</span>
+                    <span class="tag">B2B</span>
+                  </div>
+                  <a class="project-link" href="https://asiotech.com/" target="_blank" rel="noreferrer">Open Project</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-preview">
+                <img src="images/theparamedicskillsbank.jpg" alt="Homepage snapshot of The Paramedic Skills Bank">
+                <div class="preview-overlay">
+                  <div>
+                    <div class="preview-label">Homepage Snapshot</div>
+                    <div class="preview-name">The Paramedic Skills Bank</div>
+                  </div>
+                  <div>Training Platform</div>
+                </div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <div>
+                    <div class="project-type">Education Platform</div>
+                    <h3>The Paramedic Skills Bank</h3>
+                  </div>
+                  <a class="project-link" href="https://theparamedicskillsbank.co.uk/" target="_blank" rel="noreferrer">Visit Site</a>
+                </div>
+                <div class="role">Web Developer</div>
+                <p class="overview">
+                  Educational platform providing structured learning resources for paramedics with strong
+                  content organization and accessibility.
+                </p>
+                <p class="list-title">Key Contributions</p>
+                <ul class="project-list">
+                  <li>Developed a content-driven WordPress site.</li>
+                  <li>Organized training materials for better accessibility.</li>
+                  <li>Ensured a responsive and user-friendly interface.</li>
+                </ul>
+                <div class="outcome">Improved usability for healthcare professionals accessing training materials.</div>
+                <div class="project-footer">
+                  <div class="tags">
+                    <span class="tag">WordPress</span>
+                    <span class="tag">Healthcare</span>
+                    <span class="tag">Learning</span>
+                  </div>
+                  <a class="project-link" href="https://theparamedicskillsbank.co.uk/" target="_blank" rel="noreferrer">Open Project</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-preview">
+                <img src="images/consure.jpg" alt="Homepage snapshot of Consure Medical">
+                <div class="preview-overlay">
+                  <div>
+                    <div class="preview-label">Homepage Snapshot</div>
+                    <div class="preview-name">Consure Medical</div>
+                  </div>
+                  <div>Healthcare</div>
+                </div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <div>
+                    <div class="project-type">Medical Website</div>
+                    <h3>Consure Medical</h3>
+                  </div>
+                  <a class="project-link" href="https://www.consuremedical.com/" target="_blank" rel="noreferrer">Visit Site</a>
+                </div>
+                <div class="role">Web Developer</div>
+                <p class="overview">
+                  Medical-focused website designed to present services with clarity and build trust through
+                  a clean, accessible interface.
+                </p>
+                <p class="list-title">Key Contributions</p>
+                <ul class="project-list">
+                  <li>Delivered a clean and accessible UI.</li>
+                  <li>Optimized the layout for clarity and credibility.</li>
+                </ul>
+                <div class="outcome">Strengthened trust and improved the experience for visitors exploring services.</div>
+                <div class="project-footer">
+                  <div class="tags">
+                    <span class="tag">Healthcare</span>
+                    <span class="tag">Trust Design</span>
+                    <span class="tag">Accessibility</span>
+                  </div>
+                  <a class="project-link" href="https://www.consuremedical.com/" target="_blank" rel="noreferrer">Open Project</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-preview">
+                <img src="images/zupreem.jpg" alt="Homepage snapshot of ZuPreem">
+                <div class="preview-overlay">
+                  <div>
+                    <div class="preview-label">Homepage Snapshot</div>
+                    <div class="preview-name">ZuPreem</div>
+                  </div>
+                  <div>Brand & Product</div>
+                </div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <div>
+                    <div class="project-type">Product & Brand Website</div>
+                    <h3>ZuPreem</h3>
+                  </div>
+                  <a class="project-link" href="https://zupreem.com/" target="_blank" rel="noreferrer">Visit Site</a>
+                </div>
+                <div class="role">Web Developer</div>
+                <p class="overview">
+                  Brand website for a pet nutrition company showcasing products and information through a
+                  consistent and engaging presentation.
+                </p>
+                <p class="list-title">Key Contributions</p>
+                <ul class="project-list">
+                  <li>Implemented a product-focused layout.</li>
+                  <li>Maintained brand consistency across pages.</li>
+                </ul>
+                <div class="outcome">Created a stronger product presentation aligned with the company’s brand identity.</div>
+                <div class="project-footer">
+                  <div class="tags">
+                    <span class="tag">Brand Website</span>
+                    <span class="tag">Product UX</span>
+                    <span class="tag">Consumer</span>
+                  </div>
+                  <a class="project-link" href="https://zupreem.com/" target="_blank" rel="noreferrer">Open Project</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-preview">
+                <img src="images/garglewater.jpg" alt="Homepage snapshot of Garglewater">
+                <div class="preview-overlay">
+                  <div>
+                    <div class="preview-label">Homepage Snapshot</div>
+                    <div class="preview-name">Garglewater</div>
+                  </div>
+                  <div>Brand Website</div>
+                </div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <div>
+                    <div class="project-type">Brand Website</div>
+                    <h3>Garglewater</h3>
+                  </div>
+                  <a class="project-link" href="https://garglewater.com/" target="_blank" rel="noreferrer">Visit Site</a>
+                </div>
+                <div class="role">Web Developer</div>
+                <p class="overview">
+                  Brand website for Garglewater designed to present the product clearly through a polished,
+                  modern, and easy-to-navigate digital experience.
+                </p>
+                <p class="list-title">Key Contributions</p>
+                <ul class="project-list">
+                  <li>Built a modern, responsive interface aligned with the brand presentation.</li>
+                  <li>Structured content for clarity, usability, and stronger visual flow.</li>
+                  <li>Supported a clean page hierarchy across core website sections.</li>
+                </ul>
+                <div class="outcome">Delivered a more professional online presence with clearer brand communication.</div>
+                <div class="project-footer">
+                  <div class="tags">
+                    <span class="tag">Brand Website</span>
+                    <span class="tag">Responsive</span>
+                    <span class="tag">UI Clarity</span>
+                  </div>
+                  <a class="project-link" href="https://garglewater.com/" target="_blank" rel="noreferrer">Open Project</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card reveal">
+              <div class="project-preview">
+                <img src="images/prescient.jpg" alt="Homepage snapshot of Prescient Healthcare Group">
+                <div class="preview-overlay">
+                  <div>
+                    <div class="preview-label">Homepage Snapshot</div>
+                    <div class="preview-name">Prescient Healthcare Group</div>
+                  </div>
+                  <div>Consulting</div>
+                </div>
+              </div>
+              <div class="project-body">
+                <div class="project-meta">
+                  <div>
+                    <div class="project-type">Corporate Website</div>
+                    <h3>Prescient Healthcare Group</h3>
+                  </div>
+                  <a class="project-link" href="https://prescienthg.com/" target="_blank" rel="noreferrer">Visit Site</a>
+                </div>
+                <div class="role">Web Developer</div>
+                <p class="overview">
+                  Consulting firm website designed to emphasize expertise, service readability, and a clear
+                  professional structure for healthcare audiences.
+                </p>
+                <p class="list-title">Key Contributions</p>
+                <ul class="project-list">
+                  <li>Built structured corporate pages.</li>
+                  <li>Focused on professional design and readability.</li>
+                </ul>
+                <div class="outcome">Improved service communication and reinforced brand credibility.</div>
+                <div class="project-footer">
+                  <div class="tags">
+                    <span class="tag">Consulting</span>
+                    <span class="tag">Readability</span>
+                    <span class="tag">Healthcare</span>
+                  </div>
+                  <a class="project-link" href="https://prescienthg.com/" target="_blank" rel="noreferrer">Open Project</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <div class="section-head reveal">
+            <div>
+              <h2>Working Style</h2>
+            </div>
+            <p>
+              The projects here reflect a practical approach to web development: clear presentation,
+              reliable implementation, and design decisions that support real business needs.
+            </p>
+          </div>
+
+          <div class="summary-grid">
+            <article class="panel summary-card reveal">
+              <h3>Professional visual direction</h3>
+              <p>
+                Interfaces are designed to feel credible, modern, and aligned with the tone of the brand
+                they represent.
+              </p>
+            </article>
+            <article class="panel summary-card reveal">
+              <h3>Technical work with commercial value</h3>
+              <p>
+                Projects are not only built to function well, but also to improve visibility, trust, and
+                conversion opportunities.
+              </p>
+            </article>
+            <article class="panel summary-card reveal">
+              <h3>Structure that scales</h3>
+              <p>
+                From WordPress builds to integrated tools, the work prioritizes maintainability, clarity,
+                and a smooth user experience.
+              </p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer-card reveal">
+        <a class="button" href="#top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">Back to Top</a>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    const revealItems = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.14 }
+      );
+
+      revealItems.forEach((item) => observer.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add("visible"));
+    }
+  </script>
+</body>
+</html>
