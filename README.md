@@ -98,4 +98,3 @@ This repository serves as both:
 
 - A live portfolio presentation for Lemuel Layola Apa
 - A static, portable project that can be deployed quickly to GitHub Pages or any static hosting platform
-
