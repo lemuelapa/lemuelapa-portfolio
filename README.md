@@ -64,7 +64,9 @@ Featured work in the portfolio includes:
 
 This portfolio is intentionally lightweight and deploys as a static site.
 
-- `index.html` - main standalone portfolio page
+- `index.html` - portfolio content and project previews
+- `style.css` - responsive charcoal and green visual design
+- `script.js` - accessible project category filters
 - `images/` - profile and homepage snapshot assets
 - `.nojekyll` - ensures GitHub Pages serves the project as a plain static site
 
@@ -96,3 +98,4 @@ This repository serves as both:
 
 - A live portfolio presentation for Lemuel Layola Apa
 - A static, portable project that can be deployed quickly to GitHub Pages or any static hosting platform
+
